@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --color-bg: hsl(0, 0%, 20%);
+    --color-fg: hsl(0, 0%, 30%);
+    --color-accent: hsl(152, 78%, 55%);
+    --color-font: hsl(0, 0%, 80%);
+
+    --spacing: 1.25rem;
+    --rounding: 10px;
+    --border-size: 3px;
+
+    --font-text: 'Nunito', sans-serif;
+    text-align: justify;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-bg: hsl(0, 0%, 80%);
+        --color-fg: hsl(0, 0%, 90%);
+        --color-accent: hsl(152, 78%, 55%);
+        --color-font: hsl(0, 0%, 20%);
+    }
+}
+
+html,
+body {
+    background-color: var(--color-bg);
+    font-family: var(--font-text);
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-accent);
+    margin: calc(0.5*var(--spacing));
+}
+
+img {
+    height: 100%;
+    width: auto;
+}
+
+.header {
+    height: max(50px, 10vh);
+    background-color: var(--color-accent);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: var(--color-bg);
+    padding: var(--spacing);
+}
+
+.header .left {
+    display: flex;
+    align-items: center;
+    height: inherit;
+    gap: calc(0.5*var(--spacing));
+}
+
+.header .left h1 {
+    font-size: clamp(2.5rem, 7vh, 15rem);
+}
+
+.header .right {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: calc(0.5*var(--spacing));
+    align-content: center;
+}
+
+.header .right a {
+    color: var(--color-bg);
+    border-radius: var(--rounding);
+    padding: calc(0.5*var(--spacing));
+    border: var(--color-bg) var(--border-size) solid;
+    margin: 0;
+    text-align: center;
+    height: 1rem;
+}
+
+
+
+.content {
+    min-height: max(375px, 75vh);
+}
+
+.footer {
+    height: max(75px, 15vh);
+    background-color: var(--color-fg);
+}
+
+@media (max-width: 750px) AND (max-height: 800px) {
+    .mhidden {
+        display: none !important;
+    }
+
+    .mshown {
+        display: inherit;
+    }
+}
+
+/* Experiment */
+.maindd {
+    background-color: var(--color-bg);
+    color: var(--color-font);
+    border: none;
+    cursor: pointer;
+    /* padding: 20px;
+    margin-top: 20px; */
+}
+
+.maindd:focus {
+    background-color: var(--color-bg)
+}
+
+.dropdown {
+    /* position: relative;
+    display: inline-block !important; */
+}
+
+.dd-child {
+    display: none;
+    min-width: 12ch;
+}
+
+.dd-child a {
+    background-color: var(--color-accent);
+    margin-bottom: calc(0.5*var(--spacing));
+    display: block;
+}
+
+.dropdown:focus-within .dd-child {
+    display: block;
+}
